@@ -1,0 +1,4 @@
+{
+  "extends": "@proart-ui/ts-config/base.json",
+  "include": ["src"]
+}
