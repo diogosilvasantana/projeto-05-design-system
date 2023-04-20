@@ -1,7 +1,9 @@
 "use strict";
+var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __export = (target, all) => {
   for (var name in all)
@@ -15,12 +17,22 @@ var __copyProps = (to, from, except, desc) => {
   }
   return to;
 };
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
 // src/index.tsx
 var src_exports = {};
 __export(src_exports, {
+  Avatar: () => Avatar2,
   Box: () => Box,
+  Button: () => Button,
   Heading: () => Heading,
   Text: () => Text
 });
@@ -185,9 +197,296 @@ var Heading = styled("h2", {
     size: "md"
   }
 });
+
+// src/components/Avatar/styles.ts
+var Avatar = __toESM(require("@radix-ui/react-avatar"));
+var AvatarContainer = styled(Avatar.Root, {
+  borderRadius: "$full",
+  display: "inline-block",
+  width: "$12",
+  height: "$12",
+  overflow: "hidden"
+});
+var AvatarImage = styled(Avatar.Image, {
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+  borderRadius: "inherit"
+});
+var AvatarFallback = styled(Avatar.Fallback, {
+  width: "100%",
+  height: "100%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  backgroundColor: "$gray600",
+  color: "$gray800",
+  svg: {
+    width: "$6",
+    height: "$6"
+  }
+});
+
+// ../../node_modules/phosphor-react/dist/lib/index.esm.js
+var import_react2 = require("react");
+var IconContext = /* @__PURE__ */ (0, import_react2.createContext)({
+  color: "currentColor",
+  size: "1em",
+  weight: "regular",
+  mirrored: false
+});
+var renderPathForWeight = function renderPathForWeight2(weight, color, pathsByWeight2) {
+  var path = pathsByWeight2.get(weight);
+  if (!!path)
+    return path(color);
+  console.error('Unsupported icon weight. Choose from "thin", "light", "regular", "bold", "fill", or "duotone".');
+  return null;
+};
+
+// ../../node_modules/phosphor-react/dist/lib/IconBase.esm.js
+var import_react3 = __toESM(require("react"));
+
+// ../../node_modules/phosphor-react/dist/_virtual/_rollupPluginBabelHelpers.js
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null)
+    return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0)
+      continue;
+    target[key] = source[key];
+  }
+  return target;
+}
+
+// ../../node_modules/phosphor-react/dist/lib/IconBase.esm.js
+var IconBase = /* @__PURE__ */ (0, import_react3.forwardRef)(function(props, ref) {
+  var alt = props.alt, color = props.color, size = props.size, weight = props.weight, mirrored = props.mirrored, children = props.children, renderPath3 = props.renderPath, restProps = _objectWithoutPropertiesLoose(props, ["alt", "color", "size", "weight", "mirrored", "children", "renderPath"]);
+  var _useContext = (0, import_react3.useContext)(IconContext), _useContext$color = _useContext.color, contextColor = _useContext$color === void 0 ? "currentColor" : _useContext$color, contextSize = _useContext.size, _useContext$weight = _useContext.weight, contextWeight = _useContext$weight === void 0 ? "regular" : _useContext$weight, _useContext$mirrored = _useContext.mirrored, contextMirrored = _useContext$mirrored === void 0 ? false : _useContext$mirrored, restContext = _objectWithoutPropertiesLoose(_useContext, ["color", "size", "weight", "mirrored"]);
+  return import_react3.default.createElement("svg", Object.assign({
+    ref,
+    xmlns: "http://www.w3.org/2000/svg",
+    width: size != null ? size : contextSize,
+    height: size != null ? size : contextSize,
+    fill: color != null ? color : contextColor,
+    viewBox: "0 0 256 256",
+    transform: mirrored || contextMirrored ? "scale(-1, 1)" : void 0
+  }, restContext, restProps), !!alt && import_react3.default.createElement("title", null, alt), children, import_react3.default.createElement("rect", {
+    width: "256",
+    height: "256",
+    fill: "none"
+  }), renderPath3(weight != null ? weight : contextWeight, color != null ? color : contextColor));
+});
+IconBase.displayName = "IconBase";
+var IconBase_esm_default = IconBase;
+
+// ../../node_modules/phosphor-react/dist/icons/User.esm.js
+var import_react4 = __toESM(require("react"));
+var pathsByWeight = /* @__PURE__ */ new Map();
+pathsByWeight.set("bold", function(color) {
+  return import_react4.default.createElement(import_react4.default.Fragment, null, import_react4.default.createElement("circle", {
+    cx: "128",
+    cy: "96",
+    r: "64",
+    fill: "none",
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "24"
+  }), import_react4.default.createElement("path", {
+    d: "M31,216a112,112,0,0,1,194,0",
+    fill: "none",
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "24"
+  }));
+});
+pathsByWeight.set("duotone", function(color) {
+  return import_react4.default.createElement(import_react4.default.Fragment, null, import_react4.default.createElement("circle", {
+    cx: "128",
+    cy: "96",
+    r: "64",
+    opacity: "0.2"
+  }), import_react4.default.createElement("circle", {
+    cx: "128",
+    cy: "96",
+    r: "64",
+    fill: "none",
+    stroke: color,
+    strokeMiterlimit: "10",
+    strokeWidth: "16"
+  }), import_react4.default.createElement("path", {
+    d: "M31,216a112,112,0,0,1,194,0",
+    fill: "none",
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "16"
+  }));
+});
+pathsByWeight.set("fill", function() {
+  return import_react4.default.createElement(import_react4.default.Fragment, null, import_react4.default.createElement("path", {
+    d: "M231.9,212a120.7,120.7,0,0,0-67.1-54.2,72,72,0,1,0-73.6,0A120.7,120.7,0,0,0,24.1,212a7.7,7.7,0,0,0,0,8,7.8,7.8,0,0,0,6.9,4H225a7.8,7.8,0,0,0,6.9-4A7.7,7.7,0,0,0,231.9,212Z"
+  }));
+});
+pathsByWeight.set("light", function(color) {
+  return import_react4.default.createElement(import_react4.default.Fragment, null, import_react4.default.createElement("circle", {
+    cx: "128",
+    cy: "96",
+    r: "64",
+    fill: "none",
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "12"
+  }), import_react4.default.createElement("path", {
+    d: "M31,216a112,112,0,0,1,194,0",
+    fill: "none",
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "12"
+  }));
+});
+pathsByWeight.set("thin", function(color) {
+  return import_react4.default.createElement(import_react4.default.Fragment, null, import_react4.default.createElement("circle", {
+    cx: "128",
+    cy: "96",
+    r: "64",
+    fill: "none",
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "8"
+  }), import_react4.default.createElement("path", {
+    d: "M31,216a112,112,0,0,1,194,0",
+    fill: "none",
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "8"
+  }));
+});
+pathsByWeight.set("regular", function(color) {
+  return import_react4.default.createElement(import_react4.default.Fragment, null, import_react4.default.createElement("circle", {
+    cx: "128",
+    cy: "96",
+    r: "64",
+    fill: "none",
+    stroke: color,
+    strokeMiterlimit: "10",
+    strokeWidth: "16"
+  }), import_react4.default.createElement("path", {
+    d: "M31,216a112,112,0,0,1,194,0",
+    fill: "none",
+    stroke: color,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: "16"
+  }));
+});
+var renderPath = function renderPath2(weight, color) {
+  return renderPathForWeight(weight, color, pathsByWeight);
+};
+var User = /* @__PURE__ */ (0, import_react4.forwardRef)(function(props, ref) {
+  return import_react4.default.createElement(IconBase_esm_default, Object.assign({
+    ref
+  }, props, {
+    renderPath
+  }));
+});
+User.displayName = "User";
+var User_esm_default = User;
+
+// src/components/Avatar/index.tsx
+var import_jsx_runtime = require("react/jsx-runtime");
+function Avatar2(props) {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(AvatarContainer, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AvatarImage, { ...props }),
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AvatarFallback, { delayMs: 600, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(User_esm_default, {}) })
+  ] });
+}
+
+// src/components/Button.tsx
+var Button = styled("button", {
+  all: "unset",
+  padding: "0 $4",
+  borderRadius: "$sm",
+  fontSize: "$sm",
+  fontWeight: "$medium",
+  fontFamily: "$default",
+  textAlign: "center",
+  minWidth: 120,
+  boxSizing: "border-box",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: "$2",
+  cursor: "pointer",
+  "&:disabled": {
+    cursor: "not-allowed"
+  },
+  svg: {
+    width: "$4",
+    height: "$4"
+  },
+  variants: {
+    variant: {
+      primary: {
+        color: "$white",
+        background: "$proart500",
+        "&:not(:disabled):hover": {
+          background: "$proart300"
+        },
+        "&:disabled": {
+          background: "$gray200"
+        }
+      },
+      secondary: {
+        color: "$proart300",
+        border: "2px solid $proart500",
+        "&:not(:disabled):hover": {
+          background: "$proart500",
+          color: "$white"
+        },
+        "&:disabled": {
+          color: "$gray200",
+          borderColor: "$gray200"
+        }
+      },
+      tertiary: {
+        color: "$gray100",
+        "&:not(:disabled):hover": {
+          color: "$white"
+        },
+        "&:disabled": {
+          color: "$gray600"
+        }
+      }
+    },
+    size: {
+      sm: {
+        height: 38
+      },
+      md: {
+        height: 46
+      }
+    }
+  },
+  defaultVariants: {
+    variant: "primary",
+    size: "md"
+  }
+});
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
+  Avatar,
   Box,
+  Button,
   Heading,
   Text
 });
