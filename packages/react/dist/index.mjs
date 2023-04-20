@@ -106,6 +106,7 @@ var Box = styled("div", {
   backgroundColor: "$gray800",
   border: "1px solid $gray600"
 });
+Box.displayName = "Box";
 
 // src/components/Text.tsx
 var Text = styled("p", {
@@ -116,11 +117,11 @@ var Text = styled("p", {
   variants: {
     size: {
       xxs: { fontSize: "$xxs" },
-      xs: { fontSize: "$ xs" },
-      sm: { fontSize: "$ sm" },
-      md: { fontSize: "$ md" },
-      lg: { fontSize: "$ lg" },
-      xl: { fontSize: "$ xl" },
+      xs: { fontSize: "$xs" },
+      sm: { fontSize: "$sm" },
+      md: { fontSize: "$md" },
+      lg: { fontSize: "$lg" },
+      xl: { fontSize: "$xl" },
       "2xl": { fontSize: "$2xl" },
       "4xl": { fontSize: "$4xl" },
       "5xl": { fontSize: "$5xl" },
@@ -134,6 +135,7 @@ var Text = styled("p", {
     size: "md"
   }
 });
+Text.displayName = "Text";
 
 // src/components/Heading.tsx
 var Heading = styled("h2", {
@@ -143,20 +145,21 @@ var Heading = styled("h2", {
   color: "$gray100",
   variants: {
     size: {
-      sm: { fontSize: "xl" },
-      md: { fontSize: "2xl" },
-      lg: { fontSize: "4xl" },
-      "2xl": { fontSize: "5xl" },
-      "3xl": { fontSize: "6xl" },
-      "4xl": { fontSize: "7xl" },
-      "5xl": { fontSize: "8xl" },
-      "6xl": { fontSize: "9xl" }
+      sm: { fontSize: "$xl" },
+      md: { fontSize: "$2xl" },
+      lg: { fontSize: "$4xl" },
+      "2xl": { fontSize: "$5xl" },
+      "3xl": { fontSize: "$6xl" },
+      "4xl": { fontSize: "$7xl" },
+      "5xl": { fontSize: "$8xl" },
+      "6xl": { fontSize: "$9xl" }
     }
   },
   defaultVariants: {
     size: "md"
   }
 });
+Heading.displayName = "Heading";
 
 // src/components/Avatar/styles.ts
 import * as Avatar from "@radix-ui/react-avatar";
@@ -441,6 +444,7 @@ function Avatar2(props) {
     /* @__PURE__ */ jsx(AvatarFallback, { delayMs: 600, children: /* @__PURE__ */ jsx(User_esm_default, {}) })
   ] });
 }
+Avatar2.displayName = "Avatar";
 
 // src/components/Button.tsx
 var Button = styled("button", {
@@ -513,6 +517,7 @@ var Button = styled("button", {
     size: "md"
   }
 });
+Button.displayName = "Button";
 
 // src/components/TextInput/styles.ts
 var TextInputContainer = styled("div", {
@@ -522,13 +527,26 @@ var TextInputContainer = styled("div", {
   boxSizing: "border-box",
   border: "2px solid $gray900",
   display: "flex",
-  alignItems: "baseline",
+  alignItems: "center",
+  maxHeight: "2.938rem",
+  svg: {
+    margin: 0,
+    padding: 0,
+    color: "$gray400",
+    marginRight: "0.5rem"
+  },
   "&:has(input:focus)": {
-    borderColor: "$proart300"
+    borderColor: "$proart300",
+    svg: {
+      color: "$proart300"
+    }
   },
   "&:has(input:disabled)": {
     opacity: 0.5,
-    cursor: "not-allowed"
+    cursor: "not-allowed",
+    svg: {
+      opacity: 0.5
+    }
   }
 });
 var Prefix = styled("span", {
@@ -536,6 +554,14 @@ var Prefix = styled("span", {
   fontSize: "$sm",
   color: "$gray400",
   fontWeight: "regular"
+});
+var IconContainer = styled("div", {
+  display: "flex",
+  alignItems: "center",
+  color: "$gray400",
+  "&:has(input:focus)": {
+    color: "$proart300"
+  }
 });
 var Input = styled("input", {
   fontFamily: "$default",
@@ -558,12 +584,14 @@ var Input = styled("input", {
 
 // src/components/TextInput/index.tsx
 import { jsx as jsx2, jsxs as jsxs2 } from "react/jsx-runtime";
-function TextInput({ prefix, ...props }) {
+function TextInput({ prefix, icon: Icon, ...props }) {
   return /* @__PURE__ */ jsxs2(TextInputContainer, { children: [
     !!prefix && /* @__PURE__ */ jsx2(Prefix, { children: prefix }),
+    !!Icon && /* @__PURE__ */ jsx2(Icon.value, { size: Icon.size, weight: Icon.weight }),
     /* @__PURE__ */ jsx2(Input, { ...props })
   ] });
 }
+TextInput.displayName = "TextInput";
 
 // src/components/TextArea.tsx
 var TextArea = styled("textarea", {
@@ -590,6 +618,7 @@ var TextArea = styled("textarea", {
     color: "$gray400"
   }
 });
+TextArea.displayName = "TextArea";
 
 // src/components/Checkbox/styles.ts
 import * as Checkbox from "@radix-ui/react-checkbox";
@@ -648,12 +677,58 @@ import { jsx as jsx3 } from "react/jsx-runtime";
 function Checkbox2(props) {
   return /* @__PURE__ */ jsx3(CheckboxContainer, { ...props, children: /* @__PURE__ */ jsx3(CheckboxIndicator, { asChild: true, children: /* @__PURE__ */ jsx3(Check_esm_default, { weight: "bold" }) }) });
 }
+Checkbox2.displayName = "Checkbox";
+
+// src/components/MultiStep/styles.ts
+var MultiStepContainer = styled("div", {});
+var Label = styled(Text, {
+  color: "$gray200",
+  defaultVariants: {
+    size: "xs"
+  }
+});
+var Steps = styled("div", {
+  display: "grid",
+  gridTemplateColumns: "repeat(var(--steps-size), 1fr)",
+  gap: "$2",
+  marginTop: "$1"
+});
+var Step = styled("div", {
+  height: "$1",
+  borderRadius: "$px",
+  backgroundColor: "$gray500",
+  variants: {
+    active: {
+      true: {
+        backgroundColor: "$proart300"
+      }
+    }
+  }
+});
+
+// src/components/MultiStep/index.tsx
+import { jsx as jsx4, jsxs as jsxs3 } from "react/jsx-runtime";
+function MultiStep({ size, currentStep = 1 }) {
+  return /* @__PURE__ */ jsxs3(MultiStepContainer, { children: [
+    /* @__PURE__ */ jsxs3(Label, { children: [
+      "Passo ",
+      currentStep,
+      " de ",
+      size
+    ] }),
+    /* @__PURE__ */ jsx4(Steps, { css: { "--steps-size": size }, children: Array.from({ length: size }, (_, i) => i + 1).map((step) => {
+      return /* @__PURE__ */ jsx4(Step, { active: currentStep >= step }, step);
+    }) })
+  ] });
+}
+MultiStep.displayName = "MultiStep";
 export {
   Avatar2 as Avatar,
   Box,
   Button,
   Checkbox2 as Checkbox,
   Heading,
+  MultiStep,
   Text,
   TextArea,
   TextInput

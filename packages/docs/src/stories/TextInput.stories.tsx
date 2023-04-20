@@ -1,10 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Box, Text, TextInput, TextInputProps } from '@proart-ui/react'
 
+import { UserCircle } from 'phosphor-react'
+
 export default {
   title: 'Form/Text Input',
   component: TextInput,
-  args: {},
+  args: {
+    teste: true,
+  },
   decorators: [
     (Story) => {
       return (
@@ -29,6 +33,15 @@ export const Primary: StoryObj<TextInputProps> = {
 export const WithPrefix: StoryObj<TextInputProps> = {
   args: {
     prefix: 'cal.com/',
+  },
+}
+
+export const WithIcon: StoryObj<TextInputProps> = {
+  args: {
+    icon: {
+      value: UserCircle,
+      size: 24,
+    },
   },
 }
 

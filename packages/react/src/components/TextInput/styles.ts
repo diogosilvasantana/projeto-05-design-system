@@ -7,15 +7,31 @@ export const TextInputContainer = styled('div', {
   boxSizing: 'border-box',
   border: '2px solid $gray900',
   display: 'flex',
-  alignItems: 'baseline',
+  alignItems: 'center',
+  maxHeight: '2.938rem',
+
+  svg: {
+    margin: 0,
+    padding: 0,
+    color: '$gray400',
+    marginRight: '0.5rem',
+  },
 
   '&:has(input:focus)': {
     borderColor: '$proart300',
+
+    svg: {
+      color: '$proart300',
+    },
   },
 
   '&:has(input:disabled)': {
     opacity: 0.5,
     cursor: 'not-allowed',
+
+    svg: {
+      opacity: 0.5,
+    },
   },
 })
 
@@ -24,6 +40,16 @@ export const Prefix = styled('span', {
   fontSize: '$sm',
   color: '$gray400',
   fontWeight: 'regular',
+})
+
+export const IconContainer = styled('div', {
+  display: 'flex',
+  alignItems: 'center',
+  color: '$gray400',
+
+  '&:has(input:focus)': {
+    color: '$proart300',
+  },
 })
 
 export const Input = styled('input', {
