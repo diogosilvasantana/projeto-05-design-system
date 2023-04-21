@@ -39,6 +39,7 @@ __export(src_exports, {
   Text: () => Text,
   TextArea: () => TextArea,
   TextInput: () => TextInput,
+  Tooltip: () => Tooltip,
   config: () => config,
   createTheme: () => createTheme,
   css: () => css,
@@ -65,8 +66,7 @@ var colors = {
   proart300: "#FF9447",
   proart500: "#FF6B00",
   proart700: "#E05E00",
-  proart900: "#B84D00",
-  test: "#fff"
+  proart900: "#B84D00"
 };
 var space = {
   1: "0.25rem",
@@ -795,6 +795,38 @@ function MultiStep({ size, currentStep = 1 }) {
   ] });
 }
 MultiStep.displayName = "MultiStep";
+
+// src/components/Tooltip/index.tsx
+var TooltipPrimitive2 = __toESM(require("@radix-ui/react-tooltip"));
+
+// src/components/Tooltip/styles.ts
+var TooltipPrimitive = __toESM(require("@radix-ui/react-tooltip"));
+var TooltipContent = styled(TooltipPrimitive.Content, {
+  padding: "$3 $4",
+  background: "$gray900",
+  color: "$gray100",
+  fontFamily: "$default",
+  fontSize: "$sm",
+  borderRadius: "$xs",
+  fontWeight: "$medium",
+  filter: "drop-shadow(4px 16px 24px rgba(0, 0, 0, 0.25))"
+});
+var TooltipArrow = styled(TooltipPrimitive.Arrow, {
+  fill: "$gray900"
+});
+
+// src/components/Tooltip/index.tsx
+var import_jsx_runtime5 = require("react/jsx-runtime");
+function Tooltip({ content, children, ...props }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(TooltipPrimitive2.Provider, { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(TooltipPrimitive2.Root, { ...props, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(TooltipPrimitive2.Trigger, { asChild: true, children }),
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(TooltipPrimitive2.Portal, { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(TooltipContent, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(TooltipArrow, {}),
+      content
+    ] }) })
+  ] }) });
+}
+Tooltip.displayName = "Tooltip";
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Avatar,
@@ -806,6 +838,7 @@ MultiStep.displayName = "MultiStep";
   Text,
   TextArea,
   TextInput,
+  Tooltip,
   config,
   createTheme,
   css,

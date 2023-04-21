@@ -1,9 +1,10 @@
 import * as _stitches_react_types_styled_component from '@stitches/react/types/styled-component';
 import * as _stitches_react_types_css_util from '@stitches/react/types/css-util';
 import * as react from 'react';
-import { ComponentProps, ElementType } from 'react';
+import { ComponentProps, ElementType, ReactNode } from 'react';
 import * as Avatar$1 from '@radix-ui/react-avatar';
 import * as Checkbox$1 from '@radix-ui/react-checkbox';
+import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 import * as _stitches_react_types_theme from '@stitches/react/types/theme';
 import * as _stitches_react_types_css from '@stitches/react/types/css';
 import * as _stitches_react_types_stitches from '@stitches/react/types/stitches';
@@ -1692,6 +1693,14 @@ interface MultiStepProps {
 }
 declare function MultiStep({ size, currentStep }: MultiStepProps): JSX.Element;
 declare namespace MultiStep {
+    var displayName: string;
+}
+
+type TooltipProps = ComponentProps<typeof TooltipPrimitive.Root> & {
+    content: string | ReactNode;
+};
+declare function Tooltip({ content, children, ...props }: TooltipProps): JSX.Element;
+declare namespace Tooltip {
     var displayName: string;
 }
 
@@ -3397,4 +3406,4 @@ declare const config: {
     utils: {};
 };
 
-export { Avatar, AvatarProps, Box, BoxProps, Button, ButtonProps, Checkbox, CheckboxProps, Heading, HeadingProps, MultiStep, MultiStepProps, Text, TextArea, TextAreaProps, TextInput, TextInputProps, TextProps, config, createTheme, css, getCssText, globalCss, keyframes, styled, theme };
+export { Avatar, AvatarProps, Box, BoxProps, Button, ButtonProps, Checkbox, CheckboxProps, Heading, HeadingProps, MultiStep, MultiStepProps, Text, TextArea, TextAreaProps, TextInput, TextInputProps, TextProps, Tooltip, TooltipProps, config, createTheme, css, getCssText, globalCss, keyframes, styled, theme };

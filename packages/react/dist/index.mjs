@@ -13,8 +13,7 @@ var colors = {
   proart300: "#FF9447",
   proart500: "#FF6B00",
   proart700: "#E05E00",
-  proart900: "#B84D00",
-  test: "#fff"
+  proart900: "#B84D00"
 };
 var space = {
   1: "0.25rem",
@@ -743,6 +742,38 @@ function MultiStep({ size, currentStep = 1 }) {
   ] });
 }
 MultiStep.displayName = "MultiStep";
+
+// src/components/Tooltip/index.tsx
+import * as TooltipPrimitive2 from "@radix-ui/react-tooltip";
+
+// src/components/Tooltip/styles.ts
+import * as TooltipPrimitive from "@radix-ui/react-tooltip";
+var TooltipContent = styled(TooltipPrimitive.Content, {
+  padding: "$3 $4",
+  background: "$gray900",
+  color: "$gray100",
+  fontFamily: "$default",
+  fontSize: "$sm",
+  borderRadius: "$xs",
+  fontWeight: "$medium",
+  filter: "drop-shadow(4px 16px 24px rgba(0, 0, 0, 0.25))"
+});
+var TooltipArrow = styled(TooltipPrimitive.Arrow, {
+  fill: "$gray900"
+});
+
+// src/components/Tooltip/index.tsx
+import { jsx as jsx5, jsxs as jsxs4 } from "react/jsx-runtime";
+function Tooltip({ content, children, ...props }) {
+  return /* @__PURE__ */ jsx5(TooltipPrimitive2.Provider, { children: /* @__PURE__ */ jsxs4(TooltipPrimitive2.Root, { ...props, children: [
+    /* @__PURE__ */ jsx5(TooltipPrimitive2.Trigger, { asChild: true, children }),
+    /* @__PURE__ */ jsx5(TooltipPrimitive2.Portal, { children: /* @__PURE__ */ jsxs4(TooltipContent, { children: [
+      /* @__PURE__ */ jsx5(TooltipArrow, {}),
+      content
+    ] }) })
+  ] }) });
+}
+Tooltip.displayName = "Tooltip";
 export {
   Avatar2 as Avatar,
   Box,
@@ -753,6 +784,7 @@ export {
   Text,
   TextArea,
   TextInput,
+  Tooltip,
   config,
   createTheme,
   css,
