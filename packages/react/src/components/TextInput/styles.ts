@@ -2,13 +2,23 @@ import { styled } from '../../styles'
 
 export const TextInputContainer = styled('div', {
   backgroundColor: '$gray900',
-  padding: '$3 $4',
   borderRadius: '$sm',
   boxSizing: 'border-box',
   border: '2px solid $gray900',
   display: 'flex',
   alignItems: 'center',
   maxHeight: '2.938rem',
+
+  variants: {
+    size: {
+      sm: {
+        padding: '$2 $3',
+      },
+      md: {
+        padding: '$3 $4',
+      },
+    },
+  },
 
   svg: {
     margin: 0,
@@ -32,6 +42,10 @@ export const TextInputContainer = styled('div', {
     svg: {
       opacity: 0.5,
     },
+  },
+
+  defaultVariants: {
+    size: 'md',
   },
 })
 
@@ -69,7 +83,7 @@ export const Input = styled('input', {
     cursor: 'not-allowed',
   },
 
-  '&:placeholder': {
+  '&::placeholder': {
     color: '$gray400',
   },
 })
