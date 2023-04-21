@@ -13,6 +13,7 @@ declare const colors: {
     proart500: string;
     proart700: string;
     proart900: string;
+    test: string;
 };
 
 declare const space: {
