@@ -1,5 +1,5 @@
 {
-  "name": "@proart-ui/eslint-config",
+  "name": "@proart-ds/eslint-config",
   "version": "2.0.0",
   "license": "MIT",
   "private": true,

@@ -6,7 +6,7 @@ import {
   lineHeights,
   radii,
   space,
-} from '@proart-ui/tokens'
+} from '@proart-ds/tokens'
 import { createStitches, defaultThemeMap } from '@stitches/react'
 
 export const {

@@ -1,4 +1,4 @@
-# @proart-ui/react
+# @proart-ds/react
 
 ## 2.0.0
 

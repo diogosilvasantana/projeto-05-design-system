@@ -1,5 +1,5 @@
 {
-  "name": "@proart-ui/tokens",
+  "name": "@proart-ds/tokens",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/index.js",
@@ -14,8 +14,8 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@proart-ui/ts-config": "*",
-    "@proart-ui/eslint-config": "*",
+    "@proart-ds/ts-config": "*",
+    "@proart-ds/eslint-config": "*",
     "tsup": "^6.7.0",
     "typescript": "^5.0.4"
   }

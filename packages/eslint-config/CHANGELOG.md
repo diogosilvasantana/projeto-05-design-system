@@ -1,4 +1,4 @@
-# @proart-ui/eslint-config
+# @proart-ds/eslint-config
 
 ## 2.0.0
 

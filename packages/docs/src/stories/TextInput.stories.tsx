@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Box, Text, TextInput, TextInputProps } from '@proart-ui/react'
+import { Box, Text, TextInput, TextInputProps } from '@proart-ds/react'
 
 import { UserCircle } from 'phosphor-react'
 

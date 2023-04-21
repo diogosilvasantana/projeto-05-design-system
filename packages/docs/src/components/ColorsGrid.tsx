@@ -1,4 +1,4 @@
-import { colors } from '@proart-ui/tokens'
+import { colors } from '@proart-ds/tokens'
 import { getContrast } from 'polished'
 
 export function ColorsGrid() {

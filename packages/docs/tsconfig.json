@@ -1,5 +1,5 @@
 {
-  "extends": "@proart-ui/ts-config/react.json",
+  "extends": "@proart-ds/ts-config/react.json",
   "include": ["src"],
   "compilerOptions": {
     "jsx": "react-jsx"
