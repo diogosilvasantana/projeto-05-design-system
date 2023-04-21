@@ -1,5 +1,11 @@
 # @proart-ds/react
 
+## 1.0.2
+
+### Patch Changes
+
+- Remove test color and add border checkbox unchecked
+
 ## 1.0.1
 
 ### Patch Changes

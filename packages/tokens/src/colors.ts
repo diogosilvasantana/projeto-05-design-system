@@ -15,6 +15,4 @@ export const colors = {
   proart500: '#FF6B00',
   proart700: '#E05E00',
   proart900: '#B84D00',
-
-  test: '#fff',
 }

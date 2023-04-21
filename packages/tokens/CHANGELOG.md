@@ -1,5 +1,11 @@
 # @proart-ds/tokens
 
+## 1.1.1
+
+### Patch Changes
+
+- Remove test color and add border checkbox unchecked
+
 ## 1.1.0
 
 ### Minor Changes
