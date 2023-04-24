@@ -1,0 +1,2 @@
+import{A as t}from"./index.9e17e58e.js";import"./index.2a3a827a.js";import"./iframe.5b941a7e.js";import"./index.a90ab4e2.js";import"./jsx-runtime.f5ea500b.js";const p={title:"Data Display/Avatar",component:t,args:{src:"https://github.com/diogosilvasantana.png",alt:"Diogo Silva"},argTypes:{src:{control:{type:"text"}}}},c={},l={args:{src:void 0}},m=["Primary","WithFallback"];export{c as Primary,l as WithFallback,m as __namedExportsOrder,p as default};
+//# sourceMappingURL=Avatar.stories.f925f652.js.map
