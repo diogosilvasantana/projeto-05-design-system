@@ -10,13 +10,13 @@ export default {
     teste: true,
   },
   decorators: [
-    (Story) => {
+    (Story, config) => {
       return (
         <Box
           as="label"
           css={{ display: 'flex', flexDirection: 'column', gap: '$2' }}
         >
-          <Text size="sm">Email address</Text>
+          {!config.args.icon && <Text size="sm">Email address</Text>}
           {Story()}
         </Box>
       )
@@ -43,6 +43,7 @@ export const WithIcon: StoryObj<TextInputProps> = {
       value: UserCircle,
       size: 24,
     },
+    placeholder: 'usuário'
   },
 }
 

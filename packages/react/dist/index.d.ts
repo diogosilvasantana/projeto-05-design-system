@@ -27,7 +27,6 @@ declare const Box: _stitches_react_types_styled_component.StyledComponent<"div",
         proart500: string;
         proart700: string;
         proart900: string;
-        test: string;
     };
     fontSizes: {
         xxs: string;
@@ -235,7 +234,6 @@ declare const Text: _stitches_react_types_styled_component.StyledComponent<"p", 
         proart500: string;
         proart700: string;
         proart900: string;
-        test: string;
     };
     fontSizes: {
         xxs: string;
@@ -444,7 +442,6 @@ declare const Heading: _stitches_react_types_styled_component.StyledComponent<"h
         proart500: string;
         proart700: string;
         proart900: string;
-        test: string;
     };
     fontSizes: {
         xxs: string;
@@ -651,7 +648,6 @@ declare const AvatarImage: _stitches_react_types_styled_component.StyledComponen
         proart500: string;
         proart700: string;
         proart900: string;
-        test: string;
     };
     fontSizes: {
         xxs: string;
@@ -865,7 +861,6 @@ declare const Button: _stitches_react_types_styled_component.StyledComponent<"bu
         proart500: string;
         proart700: string;
         proart900: string;
-        test: string;
     };
     fontSizes: {
         xxs: string;
@@ -1072,7 +1067,6 @@ declare const Input: _stitches_react_types_styled_component.StyledComponent<"inp
         proart500: string;
         proart700: string;
         proart900: string;
-        test: string;
     };
     fontSizes: {
         xxs: string;
@@ -1287,7 +1281,6 @@ declare const TextArea: _stitches_react_types_styled_component.StyledComponent<"
         proart500: string;
         proart700: string;
         proart900: string;
-        test: string;
     };
     fontSizes: {
         xxs: string;
@@ -1493,7 +1486,6 @@ declare const CheckboxContainer: _stitches_react_types_styled_component.StyledCo
         proart500: string;
         proart700: string;
         proart900: string;
-        test: string;
     };
     fontSizes: {
         xxs: string;
@@ -1935,7 +1927,6 @@ declare const styled: <Type extends _stitches_react_types_util.Function | keyof 
         proart500: string;
         proart700: string;
         proart900: string;
-        test: string;
     };
     fontSizes: {
         xxs: string;
@@ -2148,7 +2139,6 @@ declare const styled: <Type extends _stitches_react_types_util.Function | keyof 
         proart500: string;
         proart700: string;
         proart900: string;
-        test: string;
     };
     fontSizes: {
         xxs: string;
@@ -2353,7 +2343,6 @@ declare const css: <Composers extends (string | _stitches_react_types_util.Funct
         proart500: string;
         proart700: string;
         proart900: string;
-        test: string;
     };
     fontSizes: {
         xxs: string;
@@ -2573,7 +2562,6 @@ declare const globalCss: <Styles extends {
             proart500: string;
             proart700: string;
             proart900: string;
-            test: string;
         };
         fontSizes: {
             xxs: string;
@@ -2776,7 +2764,6 @@ declare const globalCss: <Styles extends {
         proart500: string;
         proart700: string;
         proart900: string;
-        test: string;
     };
     fontSizes: {
         xxs: string;
@@ -2980,7 +2967,6 @@ declare const keyframes: (style: {
             proart500: string;
             proart700: string;
             proart900: string;
-            test: string;
         };
         fontSizes: {
             xxs: string;
@@ -3191,7 +3177,6 @@ declare const theme: string & {
         proart500: _stitches_react_types_theme.Token<"proart500", string, "colors", "">;
         proart700: _stitches_react_types_theme.Token<"proart700", string, "colors", "">;
         proart900: _stitches_react_types_theme.Token<"proart900", string, "colors", "">;
-        test: _stitches_react_types_theme.Token<"test", string, "colors", "">;
     };
     fontSizes: {
         xxs: _stitches_react_types_theme.Token<"xxs", string, "fontSizes", "">;
@@ -3265,7 +3250,6 @@ declare const createTheme: <Argument0 extends string | ({
         proart500?: string | number | boolean | undefined;
         proart700?: string | number | boolean | undefined;
         proart900?: string | number | boolean | undefined;
-        test?: string | number | boolean | undefined;
     } | undefined;
     fontSizes?: {
         xxs?: string | number | boolean | undefined;
@@ -3343,7 +3327,6 @@ declare const createTheme: <Argument0 extends string | ({
         proart500?: string | number | boolean | undefined;
         proart700?: string | number | boolean | undefined;
         proart900?: string | number | boolean | undefined;
-        test?: string | number | boolean | undefined;
     } | undefined;
     fontSizes?: {
         xxs?: string | number | boolean | undefined;
@@ -3428,7 +3411,6 @@ declare const config: {
             proart500: string;
             proart700: string;
             proart900: string;
-            test: string;
         };
         fontSizes: {
             xxs: string;
